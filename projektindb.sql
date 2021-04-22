@@ -67,8 +67,3 @@ CREATE TABLE lasku
   PRIMARY KEY (LaskuID),
   FOREIGN KEY (VarausID) REFERENCES Toimitilavaraukset(VarausID)
 );
-DESC toimipiste;
-SELECT * FROM asiakas;
-INSERT INTO asiakas
-VALUES('Mertakorpi', 'Santeri', 1, 'santeri.mertakorpi@hotmail.com','0404188376','Katu A 1','12345','Ankkalinna');
-INSERT INTO toimipiste;
