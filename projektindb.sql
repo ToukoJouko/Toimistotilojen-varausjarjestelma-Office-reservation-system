@@ -16,9 +16,9 @@ CREATE TABLE Toimipiste
 
 CREATE TABLE Asiakas
 (
+  AsiakasID INT NOT NULL AUTO_INCREMENT,
   Sukunimi VARCHAR(25) NOT NULL,
   Etunimi VARCHAR(25) NOT NULL,
-  AsiakasID INT NOT NULL AUTO_INCREMENT,
   Email VARCHAR(50),
   Puhelinnumero VARCHAR(25) NOT NULL,
   Katuosoite VARCHAR(50) NOT NULL,
@@ -47,9 +47,9 @@ CREATE TABLE Toimipisteiden_palvelut
 
 CREATE TABLE Toimitilavaraukset
 (
+  VarausID INT NOT NULL AUTO_INCREMENT,
   Alkupvm DATE NOT NULL,
   Loppupvm DATE NOT NULL,
-  VarausID INT NOT NULL AUTO_INCREMENT,
   AsiakasID INT NOT NULL,
   ToimipisteID INT NOT NULL,
   PRIMARY KEY (VarausID),
@@ -60,9 +60,9 @@ CREATE TABLE Toimitilavaraukset
 
 CREATE TABLE lasku
 (
+  LaskuID INT NOT NULL AUTO_INCREMENT,
   Summa INT NOT NULL,
   Eräpäivä DATE NOT NULL,
-  LaskuID INT NOT NULL AUTO_INCREMENT,
   VarausID INT NOT NULL,
   PRIMARY KEY (LaskuID),
   FOREIGN KEY (VarausID) REFERENCES Toimitilavaraukset(VarausID)
