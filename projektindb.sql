@@ -1,5 +1,5 @@
 CREATE DATABASE OHTU1_Proj;
-
+DROP TABLE if EXISTS asiakas, lasku, palvelut, toimipiste,toimipisteiden_palvelut, toimitilavaraukset;
 CREATE TABLE Toimipiste
 (
   ToimipisteID INT NOT NULL AUTO_INCREMENT,
@@ -33,16 +33,9 @@ CREATE TABLE Palvelut
   Tyyppi VARCHAR(25) NOT NULL,
   Nimi VARCHAR(25) NOT NULL,
   Hinta DECIMAL(10,2) NOT NULL,
-  PRIMARY KEY (PalveluID)
-);
-
-CREATE TABLE Toimipisteiden_palvelut
-(
-  PalveluID INT NOT NULL,
-  ToimipisteID INT NOT NULL,
-  PRIMARY KEY (PalveluID, ToimipisteID),
-  FOREIGN KEY (PalveluID) REFERENCES Palvelut(PalveluID),
-  FOREIGN KEY (ToimipisteID) REFERENCES Toimipiste(ToimipisteID)
+  ToimipisteiD INT NOT NULL,
+  PRIMARY KEY (PalveluID),
+  FOREIGN KEY (ToimipisteID) REFERENCES toimipiste(ToimipisteID)
 );
 
 CREATE TABLE Toimitilavaraukset
@@ -56,6 +49,16 @@ CREATE TABLE Toimitilavaraukset
   FOREIGN KEY (AsiakasID) REFERENCES Asiakas(AsiakasID),
   FOREIGN KEY (ToimipisteID) REFERENCES Toimipiste(ToimipisteID),
   UNIQUE (AsiakasID, ToimipisteID)
+);
+
+CREATE TABLE Varauksen_palvelut
+( 
+  VarausID INT NOT NULL,
+  PalveluID INT NOT NULL,
+  lkm INT NOT NULL,
+  PRIMARY KEY (PalveluID, VarausID),
+  FOREIGN KEY (PalveluID) REFERENCES Palvelut(PalveluID),
+  FOREIGN KEY (VarausID) REFERENCES Toimitilavaraukset(VarausID)
 );
 
 CREATE TABLE lasku
