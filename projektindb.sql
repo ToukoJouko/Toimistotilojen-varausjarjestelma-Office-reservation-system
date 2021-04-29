@@ -9,7 +9,7 @@ CREATE TABLE Toimipiste
   Koko_m2 INT NOT NULL,
   Huoneiden_lkm INT NOT NULL,
   Henkilomaara INT NOT NULL,
-  Vuokra INT NOT NULL,
+  Vuokra DECIMAL(5,2) NOT NULL,
   Saatavuus CHAR NOT NULL,
   PRIMARY KEY (ToimipisteID)
 );
@@ -61,7 +61,7 @@ CREATE TABLE Toimitilavaraukset
 CREATE TABLE lasku
 (
   LaskuID INT NOT NULL AUTO_INCREMENT,
-  Summa INT NOT NULL,
+  Summa DECIMAL(5,2) NOT NULL,
   Eräpäivä DATE NOT NULL,
   VarausID INT NOT NULL,
   PRIMARY KEY (LaskuID),
