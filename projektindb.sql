@@ -2,7 +2,7 @@ CREATE DATABASE OHTU1_Proj;
 
 CREATE TABLE Toimipiste
 (
-  ToimipisteID INT NOT NULL,
+  ToimipisteID INT NOT NULL AUTO_INCREMENT,
   Katuosoite VARCHAR(50) NOT NULL,
   Postinro VARCHAR(25) NOT NULL,
   Toimipaikka VARCHAR(25) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE Asiakas
 (
   Sukunimi VARCHAR(25) NOT NULL,
   Etunimi VARCHAR(25) NOT NULL,
-  AsiakasID INT NOT NULL,
+  AsiakasID INT NOT NULL AUTO_INCREMENT,
   Email VARCHAR(50),
   Puhelinnumero VARCHAR(25) NOT NULL,
   Katuosoite VARCHAR(50) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE Asiakas
 
 CREATE TABLE Palvelut
 (
-  PalveluID INT NOT NULL,
+  PalveluID INT NOT NULL AUTO_INCREMENT,
   Tyyppi VARCHAR(25) NOT NULL,
   Nimi VARCHAR(25) NOT NULL,
   Hinta INT NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE Toimitilavaraukset
 (
   Alkupvm DATE NOT NULL,
   Loppupvm DATE NOT NULL,
-  VarausID INT NOT NULL,
+  VarausID INT NOT NULL AUTO_INCREMENT,
   AsiakasID INT NOT NULL,
   ToimipisteID INT NOT NULL,
   PRIMARY KEY (VarausID),
@@ -62,7 +62,7 @@ CREATE TABLE lasku
 (
   Summa INT NOT NULL,
   Eräpäivä DATE NOT NULL,
-  LaskuID INT NOT NULL,
+  LaskuID INT NOT NULL AUTO_INCREMENT,
   VarausID INT NOT NULL,
   PRIMARY KEY (LaskuID),
   FOREIGN KEY (VarausID) REFERENCES Toimitilavaraukset(VarausID)
