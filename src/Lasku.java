@@ -1,5 +1,8 @@
 
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 
 
@@ -201,5 +204,26 @@ public class Lasku {
         }
         
         return 0;
+    }
+    //kirjoittaa laskun tekstitiedostoon
+    public void kirjoitaLasku() throws IOException{
+        try{
+            File lasku = new File(getEtunimi() + " " + getSukunimi()+ " " + "lasku");
+            if(!lasku.exists()){
+                lasku.createNewFile();
+            }
+
+            PrintWriter writer = new PrintWriter(lasku,"UTF-8");
+            writer.println("LASKU");
+            writer.println(getEtunimi() + getSukunimi());
+            writer.println(getKatu()+ getPostinro());
+            writer.println(getToimipaikka());
+            writer.println(getSposti());
+            writer.println(getSumma());
+            writer.println(getErapaiva());
+            writer.close();
+        } catch (IOException e){
+            throw e;
+        }        
     }
 }
