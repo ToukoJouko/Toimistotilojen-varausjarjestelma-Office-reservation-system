@@ -1,4 +1,4 @@
-
+package lasku;
 
 import java.io.File;
 import java.io.IOException;
@@ -121,7 +121,7 @@ public class Lasku {
     haeLasku-metodi. Hakee olemassa olevien laskujen tiedot
     */
     public static Lasku haeLasku(int laskuid) throws SQLException, Exception{
-        String sql = "SELECT asiakas.asiakasid, asiakas.etunimi, asiakas.sukunimi, asiakas.email, asiakas.katuosoite, asiakas.postinro, asiakas.toimipaikka, lasku.summa, lasku.eräpäivä" 
+        String sql = "SELECT asiakas.asiakasid, asiakas.etunimi, asiakas.sukunimi, asiakas.email, asiakas.katuosoite, asiakas.postinro, asiakas.toimipaikka, lasku.summa, lasku.eräpäivä, toimitilavaraukset.VarausID" 
         + "FROM asiakas, lasku, toimitilavaraukset"
         + "WHERE lasku.laskuid = ? and lasku.VarausID = toimitilavaraukset.VarausID and asiakas.AsiakasID = toimitilavaraukset.AsiakasID;";
         ResultSet tulosjoukko = null;
@@ -155,6 +155,7 @@ public class Lasku {
                 laskuolio.setToimipaikka(tulosjoukko.getString("Toimipaikka"));
                 laskuolio.setSumma(tulosjoukko.getDouble("Summa"));
                 laskuolio.setErapaiva(tulosjoukko.getString("Eräpäivä"));
+                laskuolio.setVarausid(tulosjoukko.getInt("VarausID"));
             }
         }
         catch (SQLException se){
