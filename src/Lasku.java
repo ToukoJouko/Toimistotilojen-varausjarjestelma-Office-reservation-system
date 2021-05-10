@@ -1,4 +1,4 @@
-package lasku;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +12,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 
 
 
@@ -116,11 +117,12 @@ public class Lasku {
     public void setAsiakasid(int asiakasid){
         this.asiakasid = asiakasid;
     }
-
+    
+    
     /* 
     haeLasku-metodi. Hakee olemassa olevien laskujen tiedot
     */
-    public static Lasku haeLasku(int laskuid) throws SQLException, Exception{
+    public void haeLasku() throws SQLException, Exception{
         String sql = "SELECT asiakas.asiakasid, asiakas.etunimi, asiakas.sukunimi, asiakas.email, asiakas.katuosoite, asiakas.postinro, asiakas.toimipaikka, lasku.summa, lasku.eräpäivä, toimitilavaraukset.VarausID" 
         + "FROM asiakas, lasku, toimitilavaraukset"
         + "WHERE lasku.laskuid = ? and lasku.VarausID = toimitilavaraukset.VarausID and asiakas.AsiakasID = toimitilavaraukset.AsiakasID;";
@@ -140,29 +142,32 @@ public class Lasku {
             }catch (Exception e){
                 throw e;
         }
-        Lasku laskuolio = new Lasku();
+        
         /*
         Hakee tarvittavat tiedot tietokannasta ja asettaa ne muuttujien arvoiksi 
         */
         try{
             if(tulosjoukko.next()==true){
-                laskuolio.setAsiakasid(tulosjoukko.getInt("AsiakasID"));
-                laskuolio.setEtunimi(tulosjoukko.getString("Etunimi"));
-                laskuolio.setSukunimi(tulosjoukko.getString("Sukunimi"));
-                laskuolio.setSposti(tulosjoukko.getString("Email"));
-                laskuolio.setKatu(tulosjoukko.getString("Katuosoite"));
-                laskuolio.setPostinro(tulosjoukko.getString("Postinro"));
-                laskuolio.setToimipaikka(tulosjoukko.getString("Toimipaikka"));
-                laskuolio.setSumma(tulosjoukko.getDouble("Summa"));
-                laskuolio.setErapaiva(tulosjoukko.getString("Eräpäivä"));
-                laskuolio.setVarausid(tulosjoukko.getInt("VarausID"));
+                setAsiakasid(tulosjoukko.getInt("AsiakasID"));
+                setEtunimi(tulosjoukko.getString("Etunimi"));
+                setSukunimi(tulosjoukko.getString("Sukunimi"));
+                setSposti(tulosjoukko.getString("Email"));
+                setKatu(tulosjoukko.getString("Katuosoite"));
+                setPostinro(tulosjoukko.getString("Postinro"));
+                setToimipaikka(tulosjoukko.getString("Toimipaikka"));
+                setSumma(tulosjoukko.getDouble("Summa"));
+                setErapaiva(tulosjoukko.getString("Eräpäivä"));
+                setVarausid(tulosjoukko.getInt("VarausID"));
             }
         }
         catch (SQLException se){
             throw se;
         }
-        return laskuolio;
+        
+
+        
     }
+    
     /*
     Luodaan uusi lasku ja lisätään sen tiedot tietokantaan.
      */
@@ -174,7 +179,7 @@ public class Lasku {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/testi", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohti1_proj", "root", "Stpm2499");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, getLaskuid());
             tulosjoukko = lause.executeQuery();
@@ -193,7 +198,7 @@ public class Lasku {
         lause = null;
         //asetetaan annetut tiedot muuttujien arvoiksi
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/testi","root","Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj","root","Stpm2499");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, getLaskuid());
             lause.setDouble(2, getSumma());
@@ -214,8 +219,9 @@ public class Lasku {
         
         return 0;
     }
+    
     //kirjoittaa laskun tekstitiedostoon
-    public void kirjoitaLasku() throws IOException{
+    public void kirjoitaLasku()throws IOException{
         try{
             File lasku = new File(getEtunimi() + " " + getSukunimi()+ " " + "lasku");
             if(!lasku.exists()){
@@ -235,7 +241,7 @@ public class Lasku {
             throw e;
         }        
     }
-
+    
     public void lahetaLasku(){
         String username = "mertakorpisanteri@gmail.com";
         String password = "StpM2499";
@@ -271,4 +277,7 @@ public class Lasku {
             throw new RuntimeException(e);
         }
     }
+    
+   
+    
 }
