@@ -17,7 +17,7 @@ public class Main extends Application{
         URL url =  new File("src/lasku/LaskuGUI.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("VuokraToimistot OY");
-        primaryStage.setScene(new Scene(root, 1000,600));
+        primaryStage.setScene(new Scene(root, 1000,600)); 
         primaryStage.show();
     }
     

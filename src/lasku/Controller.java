@@ -1,9 +1,21 @@
 package lasku;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.sql.*;
+import java.util.Properties;
 import java.util.ResourceBundle;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -96,12 +108,59 @@ public class Controller {
 
     @FXML
     void kirjoitaLasku(ActionEvent event) throws IOException {
-        
+        try{
+            File lasku = new File(etunimi.getText() + " " + sukunimi.getText()+ " " + "lasku");
+            if(!lasku.exists()){
+                lasku.createNewFile();
+            }
+            PrintWriter writer = new PrintWriter(lasku,"UTF-8");
+            writer.println("LASKU");
+            writer.println(etunimi.getText() + " " + sukunimi.getText());
+            writer.println(katu.getText()+ " " +  postinro.getText()); 
+            writer.println(toimipaikka.getText());
+            writer.println(sposti.getText());
+            writer.println(summa.getText());
+            writer.println(erapaiva.getText());
+            writer.close();
+        } catch (IOException e){
+            throw e;
+        }
     }
 
     @FXML
     void lahetaLasku(ActionEvent event) {
-        
+        String username = "mertakorpisanteri@gmail.com";
+        String password = "StpM2499";
+
+        Properties props = new Properties();
+        props.put("mail.stmp.starttls.enable", "true");
+        props.put("mail.smpt.auth", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props,
+        new javax.mail.Authenticator(){
+            protected PasswordAuthentication getPasswordAuthentication(){
+                return new PasswordAuthentication(username, password);
+            }
+
+        });
+        try{
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("mertakorpisanteri@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(sposti.getText()));
+            message.setSubject("VuokraToimistot Oy lasku");
+            message.setText("LASKU\n" 
+            + etunimi.getText() + " " + sukunimi.getText() + "\n"
+            + katu.getText() + " " + postinro.getText() + "\n"
+            + toimipaikka.getText() + "\n"
+            + sposti.getText() + "\n"
+            + summa.getText() + "\n"
+            + erapaiva.getText());
+            Transport.send(message);
+        }catch (MessagingException e){
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
