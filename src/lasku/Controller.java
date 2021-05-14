@@ -130,8 +130,8 @@ public class Controller {
             writer.println(katu.getText()+ " " +  postinro.getText()); 
             writer.println(toimipaikka.getText());
             writer.println(sposti.getText());
-            writer.println(summa.getText());
-            writer.println(erapaiva.getText());
+            writer.println("Summa: "+summa.getText()+"€");
+            writer.println("Eräpäivä: "+erapaiva.getText());
             writer.close();
             paperimsg.setText("Lasku luotu");
         } catch (IOException e){
@@ -166,8 +166,8 @@ public class Controller {
             + katu.getText() + " " + postinro.getText() + "\n"
             + toimipaikka.getText() + "\n"
             + sposti.getText() + "\n"
-            + summa.getText() + "\n"
-            + erapaiva.getText());
+            + "Summa: "+summa.getText()+"€" + "\n"
+            +"Eräpäivä: "+erapaiva.getText());
             Transport.send(message);
             spostimsg.setText("Lasku lähetetty");
         }catch (MessagingException e){
