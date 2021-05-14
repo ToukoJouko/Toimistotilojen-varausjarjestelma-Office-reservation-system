@@ -8,6 +8,7 @@ import java.sql.*;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -130,25 +131,24 @@ public class Controller {
     @FXML
     void lahetaLasku(ActionEvent event) {
         String username = "mertakorpisanteri@gmail.com";
-        String password = "StpM2499";
+        String password = "Testi!-1234";
 
         Properties props = new Properties();
-        props.put("mail.stmp.starttls.enable", "true");
-        props.put("mail.smpt.auth", "true");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
 
         Session session = Session.getInstance(props,
-        new javax.mail.Authenticator(){
-            protected PasswordAuthentication getPasswordAuthentication(){
+        new Authenticator(){
+            protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, password);
-            }
-
+            };
         });
         try{
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("mertakorpisanteri@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(sposti.getText()));
+            message.setFrom(new InternetAddress(username));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(sposti.getText()));
             message.setSubject("VuokraToimistot Oy lasku");
             message.setText("LASKU\n" 
             + etunimi.getText() + " " + sukunimi.getText() + "\n"
