@@ -91,6 +91,8 @@ public class Controller {
            tulosjoukko = lause.executeQuery();
            if (tulosjoukko == null){
                errormsg.setText("Laskua ei löydy");
+           }else{
+               errormsg.setText("");
            }
         }
         catch(SQLException se){
@@ -122,23 +124,29 @@ public class Controller {
 
     @FXML
     void kirjoitaLasku(ActionEvent event) throws IOException {
-        try{
-            File lasku = new File(etunimi.getText() + " " + sukunimi.getText()+ " " + "lasku");
-            if(!lasku.exists()){
-                lasku.createNewFile();
+
+        if (etunimi.getText() != null && sukunimi.getText() != null && katu.getText()!=null && postinro.getText()!=null && toimipaikka.getText()!=null){
+            try{
+                File lasku = new File(etunimi.getText() + " " + sukunimi.getText()+ " " + "lasku");
+                if(!lasku.exists()){
+                    lasku.createNewFile();
+                }
+                PrintWriter writer = new PrintWriter(lasku,"UTF-8");
+                writer.println("LASKU");
+                writer.println(etunimi.getText() + " " + sukunimi.getText());
+                writer.println(katu.getText()+ " " +  postinro.getText()); 
+                writer.println(toimipaikka.getText());
+                writer.println(sposti.getText());
+                writer.println("Summa: "+summa.getText()+"€");
+                writer.println("Eräpäivä: "+erapaiva.getText());
+                writer.close();
+                paperimsg.setText("Lasku luotu");
+                errormsg.setText("");
+            } catch (IOException e){
+                throw e;
             }
-            PrintWriter writer = new PrintWriter(lasku,"UTF-8");
-            writer.println("LASKU");
-            writer.println(etunimi.getText() + " " + sukunimi.getText());
-            writer.println(katu.getText()+ " " +  postinro.getText()); 
-            writer.println(toimipaikka.getText());
-            writer.println(sposti.getText());
-            writer.println("Summa: "+summa.getText()+"€");
-            writer.println("Eräpäivä: "+erapaiva.getText());
-            writer.close();
-            paperimsg.setText("Lasku luotu");
-        } catch (IOException e){
-            throw e;
+        } else{
+            errormsg.setText("Asiakastietoja puuttuu");
         }
     }
 
@@ -192,7 +200,9 @@ public class Controller {
             lause.setInt(1, Integer.parseInt(laskuid.getText()));
             tulosjoukko = lause.executeQuery();
             if(tulosjoukko.next()== true){
-                throw new Exception("Lasku on jo olemassa");
+                errormsg.setText("Lasku on jo olemassa");
+            }else{
+                errormsg.setText("");
             }
         } catch (SQLException se){
                 throw se;
@@ -215,9 +225,10 @@ public class Controller {
                 int lkm = lause.executeUpdate();
     
                 if (lkm == 0){
-                    throw new Exception("Laskun lisäys ei onnistunut");
+                    errormsg.setText("Laskun lisäys ei onnistunut");
                 }
                 lisaamsg.setText("Lasku lisätty");
+                errormsg.setText("");
     
             } catch (SQLException se){
                 throw se;
