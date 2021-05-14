@@ -20,6 +20,7 @@ import javax.mail.internet.MimeMessage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class Controller {
 
@@ -61,6 +62,15 @@ public class Controller {
 
     @FXML
     private TextField toimipaikka;
+
+    @FXML
+    private Text paperimsg;
+
+    @FXML
+    private Text spostimsg;
+
+    @FXML
+    private Text lisaamsg;
 
     
 
@@ -123,6 +133,7 @@ public class Controller {
             writer.println(summa.getText());
             writer.println(erapaiva.getText());
             writer.close();
+            paperimsg.setText("Lasku luotu");
         } catch (IOException e){
             throw e;
         }
@@ -158,6 +169,7 @@ public class Controller {
             + summa.getText() + "\n"
             + erapaiva.getText());
             Transport.send(message);
+            spostimsg.setText("Lasku lähetetty");
         }catch (MessagingException e){
             throw new RuntimeException(e);
         }
@@ -202,6 +214,7 @@ public class Controller {
                 if (lkm == 0){
                     throw new Exception("Laskun lisäys ei onnistunut");
                 }
+                lisaamsg.setText("Lasku lisätty");
     
             } catch (SQLException se){
                 throw se;
