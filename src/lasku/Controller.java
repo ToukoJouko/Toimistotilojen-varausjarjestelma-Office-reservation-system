@@ -72,6 +72,9 @@ public class Controller {
     @FXML
     private Text lisaamsg;
 
+    @FXML
+    private Text errormsg;
+
     
 
     @FXML
@@ -87,7 +90,7 @@ public class Controller {
            lause.setInt(1, Integer.parseInt(laskuid.getText())); //asettaa sql lauseen ? paikalle annetun laskuID:n
            tulosjoukko = lause.executeQuery();
            if (tulosjoukko == null){
-               throw new Exception("Laskua ei löydy");
+               errormsg.setText("Laskua ei löydy");
            }
         }
         catch(SQLException se){

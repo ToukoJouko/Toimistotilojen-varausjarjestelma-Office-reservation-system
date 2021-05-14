@@ -36,6 +36,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <VBox prefHeight="400.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lasku.Controller">
@@ -71,6 +72,11 @@
             <Text fx:id="paperimsg" fill="#00f832" layoutX="251.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="109.0" />
             <Text fx:id="spostimsg" fill="#03f828" layoutX="378.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="109.0" />
             <Text fx:id="lisaamsg" fill="#00ff11" layoutX="28.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0" />
+            <Text fx:id="errormsg" fill="#fa0000" layoutX="504.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
          </children>
     </AnchorPane>
   </children>
