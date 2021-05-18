@@ -41,9 +41,9 @@
 
 <VBox prefHeight="400.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lasku.LaskuController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="376.0" prefWidth="719.0" VBox.vgrow="ALWAYS">
+    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
          <children>
-            <TextField fx:id="laskuid" layoutX="28.0" layoutY="65.0" />
+            <TextField fx:id="laskuid" layoutX="28.0" layoutY="65.0" prefHeight="25.0" prefWidth="149.0" />
             <Text layoutX="28.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LaskuID" />
             <TextField fx:id="summa" layoutX="28.0" layoutY="138.0" />
             <Text layoutX="28.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summa" />
@@ -51,14 +51,14 @@
             <Text layoutX="28.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Eräpäivä (YYYY-MM-DD)" />
             <TextField fx:id="varausid" layoutX="28.0" layoutY="282.0" />
             <Text layoutX="28.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VarausID" />
-            <Button layoutX="27.0" layoutY="322.0" mnemonicParsing="false" onAction="#lisaaLasku" prefHeight="25.0" prefWidth="72.0" text="Lisää" />
+            <Button layoutX="240.0" layoutY="192.0" mnemonicParsing="false" onAction="#lisaaLasku" prefHeight="105.0" prefWidth="446.0" text="Lisää" />
             <TextField fx:id="asiakasid" layoutX="240.0" layoutY="65.0" prefHeight="25.0" prefWidth="44.0" />
             <Text layoutX="240.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AsiakasID" />
             <TextField fx:id="etunimi" layoutX="300.0" layoutY="65.0" prefHeight="25.0" prefWidth="170.0" />
             <Text layoutX="300.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etunimi" />
             <TextField fx:id="sukunimi" layoutX="480.0" layoutY="65.0" prefHeight="25.0" prefWidth="205.0" />
             <Text layoutX="480.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sukunimi" />
-            <Button layoutX="118.0" layoutY="322.0" mnemonicParsing="false" onAction="#haeLasku" prefHeight="25.0" prefWidth="47.0" text="Hae" />
+            <Button layoutX="240.0" layoutY="301.0" mnemonicParsing="false" onAction="#haeLasku" prefHeight="105.0" prefWidth="446.0" text="Hae" />
             <TextField fx:id="sposti" layoutX="240.0" layoutY="118.0" prefHeight="25.0" prefWidth="195.0" />
             <Text layoutX="240.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sähköposti" />
             <TextField fx:id="katu" layoutX="240.0" layoutY="163.0" prefHeight="25.0" prefWidth="186.0" />
@@ -67,16 +67,19 @@
             <Text layoutX="453.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postinumero" />
             <TextField fx:id="toimipaikka" layoutX="536.0" layoutY="163.0" />
             <Text layoutX="536.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postitoimipaikka" />
-            <Button layoutX="249.0" layoutY="213.0" mnemonicParsing="false" onAction="#kirjoitaLasku" prefHeight="82.0" prefWidth="109.0" text="Paperilasku" />
-            <Button layoutX="378.0" layoutY="214.0" mnemonicParsing="false" onAction="#lahetaLasku" prefHeight="82.0" prefWidth="109.0" text="Sähköpostilasku" />
-            <Text fx:id="paperimsg" fill="#00f832" layoutX="251.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="109.0" />
-            <Text fx:id="spostimsg" fill="#03f828" layoutX="378.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="109.0" />
-            <Text fx:id="lisaamsg" fill="#00ff11" layoutX="28.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0" />
+            <Button layoutX="749.0" layoutY="9.0" mnemonicParsing="false" onAction="#kirjoitaLasku" prefHeight="161.0" prefWidth="237.0" text="Paperilasku" AnchorPane.bottomAnchor="439.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button layoutX="760.0" layoutY="160.0" mnemonicParsing="false" onAction="#lahetaLasku" prefHeight="161.0" prefWidth="237.0" text="Sähköpostilasku" AnchorPane.rightAnchor="0.0" />
+            <Text fx:id="paperimsg" fill="#00f832" layoutX="763.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="109.0" />
+            <Text fx:id="spostimsg" fill="#03f828" layoutX="882.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="109.0" />
+            <Text fx:id="lisaamsg" fill="#00ff11" layoutX="240.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0" />
             <Text fx:id="errormsg" fill="#fa0000" layoutX="504.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
+            <Button layoutX="240.0" layoutY="408.0" mnemonicParsing="false" onAction="#poistaLasku" prefHeight="105.0" prefWidth="446.0" text="Poista" />
+            <Text fx:id="poistamsg" fill="#00ff11" layoutX="462.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0" />
+            <Button layoutX="22.0" layoutY="330.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="89.0" prefWidth="195.0" text="Tyhjennä" />
          </children>
     </AnchorPane>
   </children>

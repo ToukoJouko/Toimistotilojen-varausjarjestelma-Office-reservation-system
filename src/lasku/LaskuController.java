@@ -73,6 +73,9 @@ public class LaskuController {
     private Text lisaamsg;
 
     @FXML
+    private Text poistamsg;
+
+    @FXML
     private Text errormsg;
 
     
@@ -235,7 +238,41 @@ public class LaskuController {
             } catch (Exception e){
                 throw e;
             }
-    }  
+    }
+
+    @FXML
+    void poistaLasku(ActionEvent event) {
+        String sql = "DELETE"
+        + " " + "FROM lasku"
+        +" "+"WHERE LaskuID = ?";
+        PreparedStatement lause = null;
+        try{
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            lause = mycon.prepareStatement(sql);
+            lause.setInt(1, Integer.parseInt(laskuid.getText()));
+            lause.executeQuery();
+            poistamsg.setText("Lasku poistettu");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+    
+    @FXML
+    void tyhjennaTiedot(ActionEvent event) {
+        laskuid.setText("");
+        summa.setText("");
+        erapaiva.setText("");
+        varausid.setText("");
+        asiakasid.setText("");
+        etunimi.setText("");
+        sukunimi.setText("");
+        sposti.setText("");
+        katu.setText("");
+        postinro.setText("");
+        toimipaikka.setText("");
+
+    }
 
     @FXML
     void initialize() {
