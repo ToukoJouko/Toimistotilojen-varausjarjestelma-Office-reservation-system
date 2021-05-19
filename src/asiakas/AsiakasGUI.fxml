@@ -57,6 +57,8 @@
             <Text layoutX="457.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postinumero" />
             <Text layoutX="34.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postitoimipaikka" />
             <Button layoutX="37.0" layoutY="324.0" mnemonicParsing="false" onAction="#haeAsiakas" text="Hae" />
+            <TextField fx:id="puhelinnumero" layoutX="246.0" layoutY="287.0" />
+            <Text layoutX="246.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puhelinnumero" />
             </children>
         </AnchorPane>
     </children>
