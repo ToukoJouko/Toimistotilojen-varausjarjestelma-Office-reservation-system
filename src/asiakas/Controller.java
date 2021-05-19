@@ -180,13 +180,13 @@ public class Controller {
 
     @FXML
     void initialize() {
-        assert asiakasid != null : "fx:id=\"asiakasid\" was not injected: check your FXML file 'LaskuGUI.fxml'.";
-        assert etunimi != null : "fx:id=\"etunimi\" was not injected: check your FXML file 'LaskuGUI.fxml'.";
-        assert sukunimi != null : "fx:id=\"sukunimi\" was not injected: check your FXML file 'LaskuGUI.fxml'.";
-        assert sposti != null : "fx:id=\"sposti\" was not injected: check your FXML file 'LaskuGUI.fxml'.";
-        assert katu != null : "fx:id=\"katu\" was not injected: check your FXML file 'LaskuGUI.fxml'.";
-        assert postinro != null : "fx:id=\"postinro\" was not injected: check your FXML file 'LaskuGUI.fxml'.";
-        assert toimipaikka != null : "fx:id=\"toimipaikka\" was not injected: check your FXML file 'LaskuGUI.fxml'.";
+        assert asiakasid != null : "fx:id=\"asiakasid\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
+        assert etunimi != null : "fx:id=\"etunimi\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
+        assert sukunimi != null : "fx:id=\"sukunimi\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
+        assert sposti != null : "fx:id=\"sposti\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
+        assert katu != null : "fx:id=\"katu\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
+        assert postinro != null : "fx:id=\"postinro\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
+        assert toimipaikka != null : "fx:id=\"toimipaikka\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
 
     }
 
