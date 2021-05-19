@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class AsiakasMain extends Application {
     public void start(Stage primaryStage) throws Exception{
-        URL url =  new File("src/asiakas/sample.fxml").toURI().toURL();
+        URL url =  new File("src/asiakas/AsiakasGUI.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("Vuokratoimistot OY");
         primaryStage.setScene(new Scene(root, 1000, 600));
