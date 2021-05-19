@@ -59,6 +59,9 @@ public class Controller {
     private TextField toimipaikka;
 
     @FXML
+    private TextField puhelinnumero;
+
+    @FXML
     private Text errormsg;
 
     @FXML
@@ -70,7 +73,7 @@ public class Controller {
 
     @FXML
     void haeAsiakas(ActionEvent event) throws SQLException, Exception {
-        String sql = "SELECT asiakas.Asiakasid, asiakas.Etunimi, asiakas.Sukunimi, asiakas.Email, asiakas.Katuosoite, asiakas.Postinro, asiakas.Toimipaikka"
+        String sql = "SELECT asiakas.Asiakasid, asiakas.Etunimi, asiakas.Sukunimi, asiakas.Email, asiakas.Katuosoite, asiakas.Postinro, asiakas.toimipaikka, asiakas.Puheinnumero"
                 + " " + "FROM asiakas"
                 + " " + "WHERE asiakas.AsiakasID = ?;";
         ResultSet tulosjoukko = null;
@@ -79,7 +82,7 @@ public class Controller {
             Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText())); //asettaa sql lauseen ? paikalle annetun laskuID:n
-            tulosjoukko = lause.executeQuery();
+            tulosjoukko = lause.executeUpdate();
             if (tulosjoukko == null) {
                 //errormsg.setText("Asiakasta ei löydy");
             }
@@ -100,6 +103,7 @@ public class Controller {
                 katu.setText(tulosjoukko.getString("Katuosoite"));
                 postinro.setText(tulosjoukko.getString("Postinro"));
                 toimipaikka.setText(tulosjoukko.getString("Toimipaikka"));
+                puhelinnumero.setText(String.valueOf(tulosjoukko.getInt("Puhelinnumero")));
             }
         } catch (SQLException se) {
             throw se;
@@ -118,11 +122,11 @@ public class Controller {
             Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
-            tulosjoukko = lause.executeQuery();
+            tulosjoukko = lause.executeUpdate();
             if (tulosjoukko.next() == true) {
                 //errormsg.setText("Asiakas on jo olemassa");
-            } //else {
-                //errormsg.setText("");
+            }// else {
+                //errormsg.setText("");//
             //}
         } catch (SQLException se) {
             throw se;
@@ -130,8 +134,8 @@ public class Controller {
             throw e;
         }
         sql = "INSERT INTO asiakas"
-                + " " + "(AsiakasID, Sukunimi, Etunimi, Email, Katuosoite, Postinro, Toimipaikka)"
-                + " " + "VALUES (?,?,?,?,?,?,?)";
+                + " " + "(AsiakasID, Sukunimi, Etunimi, Email, Katuosoite, Postinro, Toimipaikka, Puhelinnumero)"
+                + " " + "VALUES (?,?,?,?,?,?,?,?)";
         lause = null;
         //asetetaan annetut tiedot muuttujien arvoiksi
         try {
@@ -144,6 +148,7 @@ public class Controller {
             lause.setString(5, sposti.getText());
             lause.setString(6, katu.getText());
             lause.setString(7, toimipaikka.getText());
+            lause.setInt(8, Integer.parseInt(puhelinnumero.getText()));
 
 
             int lkm = lause.executeUpdate();
@@ -172,7 +177,7 @@ public class Controller {
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
             lause.executeUpdate();
-            //poistamsg.setText("Asiakas poistettu");
+            //poistamsg.setText("Lasku poistettu");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -187,6 +192,7 @@ public class Controller {
         assert katu != null : "fx:id=\"katu\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
         assert postinro != null : "fx:id=\"postinro\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
         assert toimipaikka != null : "fx:id=\"toimipaikka\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
+        assert puhelinnumero != null : "fx:id=\"puhelinnumero\" was not injected: check your FXML file 'AsiakasGUI.fxml'.";
 
     }
 
