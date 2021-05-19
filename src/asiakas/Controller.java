@@ -70,9 +70,9 @@ public class Controller {
 
     @FXML
     void haeAsiakas(ActionEvent event) throws SQLException, Exception {
-        String sql = "SELECT asiakas.Asiakasid, asiakas.Etunimi, asiakas.Sukunimi, asiakas.Email, asiakas.Katuosoite, asiakas.Postinro, asiakas.toimipaikka"
-                + " " + "FROM asiakas, lasku, toimitilavaraukset"
-                + " " + "WHERE lasku.LaskuID = ? AND lasku.VarausID = toimitilavaraukset.VarausID AND asiakas.AsiakasID = toimitilavaraukset.AsiakasID;";
+        String sql = "SELECT asiakas.Asiakasid, asiakas.Etunimi, asiakas.Sukunimi, asiakas.Email, asiakas.Katuosoite, asiakas.Postinro, asiakas.Toimipaikka"
+                + " " + "FROM asiakas"
+                + " " + "WHERE asiakas.AsiakasID = ?;";
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try {
@@ -171,7 +171,7 @@ public class Controller {
             Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
-            lause.executeQuery();
+            lause.executeUpdate();
             poistamsg.setText("Asiakas poistettu");
         } catch (Exception e) {
             e.printStackTrace();
