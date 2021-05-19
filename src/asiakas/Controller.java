@@ -81,7 +81,7 @@ public class Controller {
             lause.setInt(1, Integer.parseInt(asiakasid.getText())); //asettaa sql lauseen ? paikalle annetun laskuID:n
             tulosjoukko = lause.executeQuery();
             if (tulosjoukko == null) {
-                errormsg.setText("Asiakasta ei löydy");
+                //errormsg.setText("Asiakasta ei löydy");
             }
         } catch (SQLException se) {
             throw se;
@@ -120,10 +120,10 @@ public class Controller {
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
             tulosjoukko = lause.executeQuery();
             if (tulosjoukko.next() == true) {
-                errormsg.setText("Asiakas on jo olemassa");
-            } else {
-                errormsg.setText("");
-            }
+                //errormsg.setText("Asiakas on jo olemassa");
+            } //else {
+                //errormsg.setText("");
+            //}
         } catch (SQLException se) {
             throw se;
         } catch (Exception e) {
@@ -149,10 +149,10 @@ public class Controller {
             int lkm = lause.executeUpdate();
 
             if (lkm == 0) {
-                errormsg.setText("Asiakkaan lisäys ei onnistunut");
+                //errormsg.setText("Asiakkaan lisäys ei onnistunut");
             }
-            lisaamsg.setText("Asiakas lisätty");
-            errormsg.setText("");
+            //lisaamsg.setText("Asiakas lisätty");
+            //errormsg.setText("");
 
         } catch (SQLException se) {
             throw se;
@@ -172,7 +172,7 @@ public class Controller {
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
             lause.executeUpdate();
-            poistamsg.setText("Asiakas poistettu");
+            //poistamsg.setText("Asiakas poistettu");
         } catch (Exception e) {
             e.printStackTrace();
         }
