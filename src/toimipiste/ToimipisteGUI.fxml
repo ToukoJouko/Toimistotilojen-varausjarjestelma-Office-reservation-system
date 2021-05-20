@@ -10,27 +10,29 @@
    <children>
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button layoutX="34.0" layoutY="396.0" mnemonicParsing="false" onAction="#lisaaToimipiste" prefHeight="62.0" prefWidth="246.0" text="Lisää" />
-            <Button layoutX="358.0" layoutY="396.0" mnemonicParsing="false" onAction="#poistaToimipiste" prefHeight="62.0" prefWidth="246.0" text="Poista" />
-            <TextField fx:id="ToimipisteID" layoutX="34.0" layoutY="170.0" />
-            <TextField fx:id="Toimipaikka" layoutX="34.0" layoutY="227.0" />
-            <TextField fx:id="Henkilomaara" layoutX="34.0" layoutY="287.0" />
-            <TextField fx:id="Katuosoite" layoutX="246.0" layoutY="170.0" />
-            <TextField fx:id="Koko_m2" layoutX="246.0" layoutY="227.0" />
-            <TextField fx:id="Postinro" layoutX="457.0" layoutY="170.0" />
-            <TextField fx:id="Huoneiden_lkm" layoutX="450.0" layoutY="227.0" />
-            <Text layoutX="34.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ToimipisteID" />
-            <Text layoutX="246.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Katuosoite" />
-            <Text layoutX="455.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postinro" />
-            <Text layoutX="34.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toimipaikka" />
-            <Text layoutX="250.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koko_m2" />
-            <Text layoutX="457.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huoneiden_lkm" />
-            <Text layoutX="34.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Henkilomaara" />
-            <Button layoutX="37.0" layoutY="324.0" mnemonicParsing="false" onAction="#haeToimipiste" text="Hae" />
-            <TextField fx:id="Vuokra" layoutX="246.0" layoutY="287.0" />
-            <TextField fx:id="Saatavuus" layoutX="450.0" layoutY="287.0" />
-            <Text layoutX="246.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vuokra" />
-            <Text layoutX="454.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saatavuus" />
+            <Button layoutX="308.0" layoutY="25.0" mnemonicParsing="false" onAction="#lisaaToimipiste" prefHeight="87.0" prefWidth="318.0" text="Lisää" />
+            <Button layoutX="308.0" layoutY="121.0" mnemonicParsing="false" onAction="#poistaToimipiste" prefHeight="87.0" prefWidth="318.0" text="Poista" />
+            <TextField fx:id="ToimipisteID" layoutX="10.0" layoutY="49.0" prefHeight="25.0" prefWidth="83.0" />
+            <TextField fx:id="Toimipaikka" layoutX="10.0" layoutY="202.0" prefHeight="25.0" prefWidth="235.0" />
+            <TextField fx:id="Henkilomaara" layoutX="10.0" layoutY="354.0" prefHeight="25.0" prefWidth="235.0" />
+            <TextField fx:id="Katuosoite" layoutX="10.0" layoutY="102.0" prefHeight="25.0" prefWidth="235.0" />
+            <TextField fx:id="Koko_m2" layoutX="10.0" layoutY="251.0" prefHeight="25.0" prefWidth="235.0" />
+            <TextField fx:id="Postinro" layoutX="10.0" layoutY="152.0" prefHeight="25.0" prefWidth="235.0" />
+            <TextField fx:id="Huoneiden_lkm" layoutX="10.0" layoutY="300.0" prefHeight="25.0" prefWidth="235.0" />
+            <Text layoutX="10.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ToimipisteID" />
+            <Text layoutX="10.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Katuosoite" />
+            <Text layoutX="10.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postinro" />
+            <Text layoutX="10.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toimipaikka" />
+            <Text layoutX="10.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koko_m2" />
+            <Text layoutX="10.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huoneiden_lkm" />
+            <Text layoutX="10.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Henkilomaara" />
+            <Button layoutX="308.0" layoutY="220.0" mnemonicParsing="false" onAction="#haeToimipiste" prefHeight="87.0" prefWidth="318.0" text="Hae" />
+            <TextField fx:id="Vuokra" layoutX="10.0" layoutY="404.0" prefHeight="25.0" prefWidth="235.0" />
+            <TextField fx:id="Saatavuus" layoutX="10.0" layoutY="455.0" prefHeight="25.0" prefWidth="235.0" />
+            <Text layoutX="10.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vuokra" />
+            <Text layoutX="10.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saatavuus" />
+            <Button layoutX="308.0" layoutY="321.0" mnemonicParsing="false" onAction="#muutaTiedot" prefHeight="82.0" prefWidth="318.0" text="Muuta" />
+            <Button layoutX="308.0" layoutY="414.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="82.0" prefWidth="318.0" text="Tyhjennä" />
          </children>
       </AnchorPane>
    </children>
