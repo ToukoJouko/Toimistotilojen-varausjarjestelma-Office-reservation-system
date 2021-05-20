@@ -16,7 +16,7 @@ public class LaskuGUI extends Application{
     public void start(Stage primaryStage) throws Exception {
         URL url =  new File("src/lasku/LaskuGUI.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
-        primaryStage.setTitle("VuokraToimistot OY");
+        primaryStage.setTitle("VuokraToimistot OY/Laskujenhallinta");
         primaryStage.setScene(new Scene(root, 1000,600)); 
         primaryStage.show();
     }
