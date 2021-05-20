@@ -33,6 +33,10 @@
             <Text layoutX="10.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saatavuus" />
             <Button layoutX="428.0" layoutY="238.0" mnemonicParsing="false" onAction="#muutaTiedot" prefHeight="106.0" prefWidth="554.0" text="Muuta" />
             <Button layoutX="428.0" layoutY="468.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="126.0" prefWidth="554.0" text="Tyhjennä" />
+            <Text fx:id="poistamsg" layoutX="14.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.4700927734375" />
+            <Text fx:id="lisaamsg" layoutX="10.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.33333333333331" />
+            <Text fx:id="errormsg" layoutX="10.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.33333333333331" />
+            <Text fx:id="muutamsg" layoutX="10.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.33333333333331" />
          </children>
       </AnchorPane>
    </children>
