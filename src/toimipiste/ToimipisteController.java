@@ -78,7 +78,7 @@ public class ToimipisteController {
             ResultSet tulosjoukko = null;
             PreparedStatement lause = null;
             try {
-                Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+                Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "banko1enas");
                 lause = mycon.prepareStatement(sql);
                 lause.setInt(1, Integer.parseInt(ToimipisteID.getText())); //asettaa sql lauseen ? paikalle annetun ToimipisteID:n
                 tulosjoukko = lause.executeQuery();
@@ -123,18 +123,18 @@ public class ToimipisteController {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "banko1enas");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             tulosjoukko = lause.executeQuery();
             if(tulosjoukko.next()== true){
-                //errormsg.setText("Toimipiste on jo olemassa");
+                errormsg.setText("Toimipiste on jo olemassa");
             }//else{
-                //errormsg.setText("");
+                errormsg.setText("");
             //}
         } catch (SQLException se){
             throw se;
-            }catch (Exception e){
+        }catch (Exception e){
                 throw e;
         }
         sql = "INSERT INTO toimipiste"
@@ -143,7 +143,7 @@ public class ToimipisteController {
         lause = null;
         //asetetaan annetut tiedot muuttujien arvoiksi
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj","root","Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj","root","banko1enas");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             lause.setString(2, Katuosoite.getText());
@@ -158,10 +158,10 @@ public class ToimipisteController {
             int lkm = lause.executeUpdate();
 
             if (lkm == 0){
-                //errormsg.setText("Toimipisteen lisäys ei onnistunut");
+                errormsg.setText("Toimipisteen lisäys ei onnistunut");
             }
-            //lisaamsg.setText("Toimipiste lisätty");
-            //errormsg.setText("");
+            lisaamsg.setText("Toimipiste lisätty");
+            errormsg.setText("");
 
         } catch (SQLException se){
             throw se;
@@ -177,11 +177,11 @@ public class ToimipisteController {
                 +" "+"WHERE ToimipisteID = ?";
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "banko1enas");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             lause.executeQuery();
-            //poistamsg.setText("Toimipiste poistettu");
+            poistamsg.setText("Toimipiste poistettu");
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -195,7 +195,7 @@ public class ToimipisteController {
                 + " " + "WHERE ToimipisteID = ?";
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "banko1enas");
             lause = mycon.prepareStatement(sql);
             lause.setString(1, Katuosoite.getText());
             lause.setString(2, Postinro.getText());
@@ -207,7 +207,7 @@ public class ToimipisteController {
             lause.setString(8, Saatavuus.getText());
             lause.setString(9, ToimipisteID.getText());
             lause.executeUpdate();
-            //muutamsg.setText("Tiedot muutettu");
+            muutamsg.setText("Tiedot muutettu");
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -226,10 +226,10 @@ public class ToimipisteController {
         Henkilomaara.setText("");
         Vuokra.setText("");
         Saatavuus.setText("");
-        //lisaamsg.setText("");
-        //poistamsg.setText("");
-        //errormsg.setText("");
-        //muutamsg.setText("");
+        lisaamsg.setText("");
+        poistamsg.setText("");
+        errormsg.setText("");
+        muutamsg.setText("");
 
     }
 
