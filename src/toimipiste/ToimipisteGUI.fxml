@@ -28,9 +28,7 @@
             <Text layoutX="10.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Henkilomaara" />
             <Button layoutX="308.0" layoutY="220.0" mnemonicParsing="false" onAction="#haeToimipiste" prefHeight="87.0" prefWidth="318.0" text="Hae" />
             <TextField fx:id="Vuokra" layoutX="10.0" layoutY="404.0" prefHeight="25.0" prefWidth="235.0" />
-            <TextField fx:id="Saatavuus" layoutX="10.0" layoutY="455.0" prefHeight="25.0" prefWidth="235.0" />
             <Text layoutX="10.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vuokra" />
-            <Text layoutX="10.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saatavuus" />
             <Button layoutX="308.0" layoutY="321.0" mnemonicParsing="false" onAction="#muutaTiedot" prefHeight="82.0" prefWidth="318.0" text="Muuta" />
             <Button layoutX="308.0" layoutY="414.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="82.0" prefWidth="318.0" text="Tyhjennä" />
          </children>

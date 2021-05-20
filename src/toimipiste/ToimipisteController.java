@@ -41,9 +41,6 @@ public class ToimipisteController {
         private TextField Vuokra;
 
         @FXML
-        private TextField Saatavuus;
-
-        @FXML
         private Text errormsg;
 
         @FXML
@@ -58,7 +55,7 @@ public class ToimipisteController {
 
         @FXML
         void haeToimipiste(ActionEvent event) throws SQLException, Exception {
-            String sql = "SELECT toimipiste.ToimipisteID, toimipiste.Katuosoite, toimipiste.Postinro, toimipiste.Toimipaikka, toimipiste.Koko_m2, toimipiste.Huoneiden_lkm, toimipiste.Henkilomaara, toimipiste.Vuokra, toimipiste.Saatavuus"
+            String sql = "SELECT toimipiste.ToimipisteID, toimipiste.Katuosoite, toimipiste.Postinro, toimipiste.Toimipaikka, toimipiste.Koko_m2, toimipiste.Huoneiden_lkm, toimipiste.Henkilomaara, toimipiste.Vuokra"
                     + " " + "FROM toimipiste"
                     + " " + "WHERE toimipiste.ToimipisteID = ?";
             ResultSet tulosjoukko = null;
@@ -92,7 +89,7 @@ public class ToimipisteController {
                     Huoneiden_lkm.setText(tulosjoukko.getString("Huoneiden_lkm"));
                     Henkilomaara.setText(tulosjoukko.getString("Henkilomaara"));
                     Vuokra.setText(tulosjoukko.getString("Vuokra"));
-                    Saatavuus.setText(tulosjoukko.getString("Saatavuus"));
+                    
                 }
             }
             catch (SQLException se){
@@ -124,8 +121,8 @@ public class ToimipisteController {
                 throw e;
         }
         sql = "INSERT INTO toimipiste"
-                + " " + "(ToimipisteID, Katuosoite, Postinro, Toimipaikka, Koko_m2, Huoneiden_lkm, Henkilomaara, Vuokra, Saatavuus)"
-                + " " + "VALUES (?,?,?,?,?,?,?,?,?)";
+                + " " + "(ToimipisteID, Katuosoite, Postinro, Toimipaikka, Koko_m2, Huoneiden_lkm, Henkilomaara, Vuokra)"
+                + " " + "VALUES (?,?,?,?,?,?,?,?)";
         lause = null;
         //asetetaan annetut tiedot muuttujien arvoiksi
         try{
@@ -139,7 +136,6 @@ public class ToimipisteController {
             lause.setInt(6, Integer.parseInt(Huoneiden_lkm.getText()));
             lause.setInt(7, Integer.parseInt(Henkilomaara.getText()));
             lause.setDouble(8, Double.parseDouble(Vuokra.getText()));
-            lause.setInt(9, Integer.parseInt(Saatavuus.getText()));
 
             int lkm = lause.executeUpdate();
 
@@ -177,7 +173,7 @@ public class ToimipisteController {
     @FXML
     void muutaTiedot(ActionEvent event) {
         String sql = "UPDATE toimipiste"
-                + " " + "SET Katuosoite = ?, Postinro = ?, Toimipaikka = ?, Koko_m2 = ?, Huoneiden_lkm = ?, Henkilomaara = ?, Vuokra = ?, Saatavuus = ?"
+                + " " + "SET Katuosoite = ?, Postinro = ?, Toimipaikka = ?, Koko_m2 = ?, Huoneiden_lkm = ?, Henkilomaara = ?, Vuokra = ?"
                 + " " + "WHERE ToimipisteID = ?";
         PreparedStatement lause = null;
         try{
@@ -190,8 +186,7 @@ public class ToimipisteController {
             lause.setString(5, Huoneiden_lkm.getText());
             lause.setString(6, Henkilomaara.getText());
             lause.setString(7, Vuokra.getText());
-            lause.setString(8, Saatavuus.getText());
-            lause.setString(9, ToimipisteID.getText());
+            lause.setString(8, ToimipisteID.getText());
             lause.executeUpdate();
             //muutamsg.setText("Tiedot muutettu");
         }catch (Exception e){
@@ -211,7 +206,6 @@ public class ToimipisteController {
         Huoneiden_lkm.setText("");
         Henkilomaara.setText("");
         Vuokra.setText("");
-        Saatavuus.setText("");
         //lisaamsg.setText("");
         //poistamsg.setText("");
         //errormsg.setText("");
@@ -233,7 +227,6 @@ public class ToimipisteController {
             assert Huoneiden_lkm != null : "fx:id=\"Huoneiden_lkm\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
             assert Henkilomaara != null : "fx:id=\"Henkilomaara\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
             assert Vuokra != null : "fx:id=\"Vuokra\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
-            assert Saatavuus != null : "fx:id=\"Saatavuus\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
 
 
         }

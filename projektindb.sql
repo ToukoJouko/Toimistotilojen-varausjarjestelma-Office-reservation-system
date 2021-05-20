@@ -10,7 +10,6 @@ CREATE TABLE Toimipiste
   Huoneiden_lkm INT NOT NULL,
   Henkilomaara INT NOT NULL,
   Vuokra DECIMAL(10,2) NOT NULL,
-  Saatavuus CHAR NOT NULL,
   PRIMARY KEY (ToimipisteID)
 );
 
