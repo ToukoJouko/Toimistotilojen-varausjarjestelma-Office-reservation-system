@@ -66,6 +66,9 @@ public class ToimipisteController {
         @FXML
         private Text poistamsg;
 
+        @FXML
+        private Text muutamsg;
+
 
         @FXML
         void haeToimipiste(ActionEvent event) throws SQLException, Exception {
@@ -182,6 +185,51 @@ public class ToimipisteController {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+    }
+
+    @FXML
+    void muutaTiedot(ActionEvent event) {
+        String sql = "UPDATE toimipiste"
+                + " " + "SET Katuosoite = ?, Postinro = ?, Toimipaikka = ?, Koko_m2 = ?, Huoneiden_lkm = ?, Henkilomaara = ?, Vuokra = ?, Saatavuus = ?"
+                + " " + "WHERE ToimipisteID = ?";
+        PreparedStatement lause = null;
+        try{
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            lause = mycon.prepareStatement(sql);
+            lause.setString(1, Katuosoite.getText());
+            lause.setString(2, Postinro.getText());
+            lause.setString(3, Toimipaikka.getText());
+            lause.setString(4, Koko_m2.getText());
+            lause.setString(5, Huoneiden_lkm.getText());
+            lause.setString(6, Henkilomaara.getText());
+            lause.setString(7, Vuokra.getText());
+            lause.setString(8, Saatavuus.getText());
+            lause.setString(9, ToimipisteID.getText());
+            lause.executeUpdate();
+            //muutamsg.setText("Tiedot muutettu");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+    @FXML
+    void tyhjennaTiedot(ActionEvent event) {
+        ToimipisteID.setText("");
+        Katuosoite.setText("");
+        Postinro.setText("");
+        Toimipaikka.setText("");
+        Koko_m2.setText("");
+        Huoneiden_lkm.setText("");
+        Henkilomaara.setText("");
+        Vuokra.setText("");
+        Saatavuus.setText("");
+        //lisaamsg.setText("");
+        //poistamsg.setText("");
+        //errormsg.setText("");
+        //muutamsg.setText("");
 
     }
 
