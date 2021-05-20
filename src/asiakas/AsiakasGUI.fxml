@@ -40,25 +40,33 @@
 
 <VBox prefHeight="660.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="asiakas.Controller">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
             <children>
-                <Button layoutX="34.0" layoutY="396.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="246.0" text="Lisää" />
-                <Button layoutX="358.0" layoutY="396.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="246.0" text="Poista" />
-            <TextField fx:id="asiakasid" layoutX="34.0" layoutY="170.0" prefHeight="25.0" prefWidth="182.0" />
-            <TextField fx:id="sposti" layoutX="34.0" layoutY="227.0" prefHeight="25.0" prefWidth="182.0" />
-            <TextField fx:id="postitoimipaikka" layoutX="34.0" layoutY="287.0" prefHeight="25.0" prefWidth="182.0" />
-            <TextField fx:id="etunimi" layoutX="246.0" layoutY="170.0" prefHeight="25.0" prefWidth="182.0" />
-            <TextField fx:id="katu" layoutX="246.0" layoutY="227.0" prefHeight="25.0" prefWidth="182.0" />
-            <TextField fx:id="sukunimi" layoutX="457.0" layoutY="170.0" prefHeight="25.0" prefWidth="182.0" />
-            <TextField fx:id="postinro" layoutX="450.0" layoutY="227.0" prefHeight="25.0" prefWidth="182.0" />
-            <Text layoutX="34.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AsiakasID" />
-            <Text layoutX="246.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etunimi" />
-            <Text layoutX="457.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sukunimi" />
-            <Text layoutX="34.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sähköposti" />
-            <Text layoutX="246.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Osoite" />
-            <Text layoutX="457.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postinumero" />
-            <Text layoutX="34.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postitoimipaikka" />
-            <Button layoutX="37.0" layoutY="324.0" mnemonicParsing="false" onAction="#haeAsiakas" text="Hae" />
+                <Button layoutX="678.0" layoutY="54.0" mnemonicParsing="false" onAction="#lisaaAsiakas" prefHeight="148.0" prefWidth="554.0" text="Lisää" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <Button layoutX="680.0" layoutY="148.0" mnemonicParsing="false" onAction="#poistaAsiakas" prefHeight="93.0" prefWidth="554.0" text="Poista" AnchorPane.rightAnchor="0.0" />
+            <TextField fx:id="asiakasid" layoutX="18.0" layoutY="55.0" prefHeight="25.0" prefWidth="49.0" />
+            <TextField fx:id="sposti" layoutX="18.0" layoutY="190.0" prefHeight="25.0" prefWidth="246.0" />
+            <TextField fx:id="toimipaikka" layoutX="18.0" layoutY="367.0" prefHeight="25.0" prefWidth="246.0" />
+            <TextField fx:id="etunimi" layoutX="18.0" layoutY="105.0" prefHeight="25.0" prefWidth="246.0" />
+            <TextField fx:id="katu" layoutX="18.0" layoutY="283.0" prefHeight="25.0" prefWidth="246.0" />
+            <TextField fx:id="sukunimi" layoutX="18.0" layoutY="148.0" prefHeight="25.0" prefWidth="246.0" />
+            <TextField fx:id="postinro" layoutX="18.0" layoutY="325.0" prefHeight="25.0" prefWidth="246.0" />
+            <Text layoutX="17.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AsiakasID" />
+            <Text layoutX="23.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etunimi" />
+            <Text layoutX="18.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sukunimi" />
+            <Text layoutX="13.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sähköposti" />
+            <Text layoutX="18.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Osoite" />
+            <Text layoutX="18.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postinumero" />
+            <Text layoutX="19.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postitoimipaikka" />
+            <Button layoutX="680.0" layoutY="347.0" mnemonicParsing="false" onAction="#haeAsiakas" prefHeight="126.0" prefWidth="554.0" text="Hae" AnchorPane.rightAnchor="0.0" />
+            <TextField fx:id="puhelinnumero" layoutX="18.0" layoutY="240.0" prefHeight="25.0" prefWidth="246.0" />
+            <Text layoutX="18.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puhelinnumero" wrappingWidth="221.578125" />
+            <Button layoutX="673.0" layoutY="524.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="126.0" prefWidth="554.0" text="Tyhjennä" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Text fx:id="lisaamsg" fill="#00b212" layoutX="146.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="246.0" />
+            <Text fx:id="poistamsg" fill="#00b212" layoutX="146.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="246.0" AnchorPane.leftAnchor="146.0" />
+            <Text fx:id="errormsg" fill="#fc0000" layoutX="14.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="264.13671875" />
+            <Button layoutX="446.0" layoutY="242.0" mnemonicParsing="false" onAction="#muutaTiedot" prefHeight="106.0" prefWidth="554.0" text="Muuta" />
+            <Text fx:id="muutamsg" fill="#00b212" layoutX="155.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="246.0" AnchorPane.leftAnchor="146.0" />
             </children>
         </AnchorPane>
     </children>
