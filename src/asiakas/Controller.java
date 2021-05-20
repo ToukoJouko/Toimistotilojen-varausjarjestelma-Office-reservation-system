@@ -1,10 +1,10 @@
 package asiakas;
 
-import java.util.ResourceBundle;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import java.net.URL;
 import java.sql.*;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
