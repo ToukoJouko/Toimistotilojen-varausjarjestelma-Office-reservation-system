@@ -239,15 +239,15 @@ public class ToimipisteController {
 
     @FXML
         void initialize() {
-            assert ToimipisteID != null : "fx:id=\"ToimipisteID\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Katuosoite != null : "fx:id=\"Katuosoite\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Postinro != null : "fx:id=\"Postinro\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Toimipaikka != null : "fx:id=\"Toimipaikka\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Koko_m2 != null : "fx:id=\"Koko_m2\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Huoneiden_lkm != null : "fx:id=\"Huoneiden_lkm\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Henkilomaara != null : "fx:id=\"Henkilomaara\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Vuokra != null : "fx:id=\"Vuokra\" was not injected: check your FXML file 'sample.fxml'.";
-            assert Saatavuus != null : "fx:id=\"Saatavuus\" was not injected: check your FXML file 'sample.fxml'.";
+            assert ToimipisteID != null : "fx:id=\"ToimipisteID\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Katuosoite != null : "fx:id=\"Katuosoite\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Postinro != null : "fx:id=\"Postinro\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Toimipaikka != null : "fx:id=\"Toimipaikka\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Koko_m2 != null : "fx:id=\"Koko_m2\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Huoneiden_lkm != null : "fx:id=\"Huoneiden_lkm\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Henkilomaara != null : "fx:id=\"Henkilomaara\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Vuokra != null : "fx:id=\"Vuokra\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
+            assert Saatavuus != null : "fx:id=\"Saatavuus\" was not injected: check your FXML file 'ToimipisteGUI.fxml'.";
 
 
         }
