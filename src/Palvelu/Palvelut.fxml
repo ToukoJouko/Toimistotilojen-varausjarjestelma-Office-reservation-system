@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Palvelu.PalvelutController">
+   <children>
+      <HBox layoutX="14.0" layoutY="14.0" prefHeight="397.0" prefWidth="522.0">
+         <children>
+            <VBox prefHeight="393.0" prefWidth="176.0" spacing="25.0">
+               <children>
+                  <Label fx:id="tfPalvelu" text="PalveluID">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tfTyyppi" text="Tyyppi">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tfNimi" text="Nimi">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tfHinta" text="Hinta">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="372.0" prefWidth="347.0" spacing="22.0">
+               <children>
+                  <TextField fx:id="palveluID">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tyyppi" promptText="Palvelu / Laite">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="nimi">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="hinta">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="tyhjenna" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="47.0" prefWidth="347.0" text="Tyhjennä">
+                     <font>
+                        <Font size="23.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="541.0" layoutY="14.0" prefHeight="483.0" prefWidth="455.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#haePalvelu" prefHeight="95.0" prefWidth="330.0" text="Hae">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSijoita" mnemonicParsing="false" onAction="#lisaaPalvelu" prefHeight="95.0" prefWidth="330.0" text="Lisää">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnPaivita" mnemonicParsing="false" onAction="#muutaPalvelu" prefHeight="95.0" prefWidth="330.0" text="Muuta">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnPoista" mnemonicParsing="false" onAction="#poistaPalvelu" prefHeight="95.0" prefWidth="330.0" text="Poista">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

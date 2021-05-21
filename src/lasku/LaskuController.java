@@ -271,6 +271,9 @@ public class LaskuController {
         katu.setText("");
         postinro.setText("");
         toimipaikka.setText("");
+        paperimsg.setText("");
+        spostimsg.setText("");
+        errormsg.setText("");
 
     }
 

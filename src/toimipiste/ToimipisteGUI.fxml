@@ -8,17 +8,10 @@
 
 <VBox prefHeight="660.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="toimipiste.ToimipisteController">
    <children>
-<<<<<<< HEAD
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <Button layoutX="308.0" layoutY="25.0" mnemonicParsing="false" onAction="#lisaaToimipiste" prefHeight="87.0" prefWidth="318.0" text="Lisää" />
             <Button layoutX="308.0" layoutY="121.0" mnemonicParsing="false" onAction="#poistaToimipiste" prefHeight="87.0" prefWidth="318.0" text="Poista" />
-=======
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
-         <children>
-            <Button layoutX="428.0" mnemonicParsing="false" onAction="#lisaaToimipiste" prefHeight="148.0" prefWidth="554.0" text="Lisää" />
-            <Button layoutX="428.0" layoutY="146.0" mnemonicParsing="false" onAction="#poistaToimipiste" prefHeight="93.0" prefWidth="554.0" text="Poista" />
->>>>>>> 689f7d932ed3905151f0f0cf8448e0cbb5982b05
             <TextField fx:id="ToimipisteID" layoutX="10.0" layoutY="49.0" prefHeight="25.0" prefWidth="83.0" />
             <TextField fx:id="Toimipaikka" layoutX="10.0" layoutY="202.0" prefHeight="25.0" prefWidth="235.0" />
             <TextField fx:id="Henkilomaara" layoutX="10.0" layoutY="354.0" prefHeight="25.0" prefWidth="235.0" />
@@ -33,25 +26,11 @@
             <Text layoutX="10.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Koko_m2" />
             <Text layoutX="10.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huoneiden_lkm" />
             <Text layoutX="10.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Henkilomaara" />
-<<<<<<< HEAD
             <Button layoutX="308.0" layoutY="220.0" mnemonicParsing="false" onAction="#haeToimipiste" prefHeight="87.0" prefWidth="318.0" text="Hae" />
             <TextField fx:id="Vuokra" layoutX="10.0" layoutY="404.0" prefHeight="25.0" prefWidth="235.0" />
             <Text layoutX="10.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vuokra" />
             <Button layoutX="308.0" layoutY="321.0" mnemonicParsing="false" onAction="#muutaTiedot" prefHeight="82.0" prefWidth="318.0" text="Muuta" />
             <Button layoutX="308.0" layoutY="414.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="82.0" prefWidth="318.0" text="Tyhjennä" />
-=======
-            <Button layoutX="428.0" layoutY="341.0" mnemonicParsing="false" onAction="#haeToimipiste" prefHeight="126.0" prefWidth="554.0" text="Hae" />
-            <TextField fx:id="Vuokra" layoutX="10.0" layoutY="404.0" prefHeight="25.0" prefWidth="235.0" />
-            <TextField fx:id="Saatavuus" layoutX="10.0" layoutY="455.0" prefHeight="25.0" prefWidth="235.0" />
-            <Text layoutX="10.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vuokra" />
-            <Text layoutX="10.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saatavuus" />
-            <Button layoutX="428.0" layoutY="238.0" mnemonicParsing="false" onAction="#muutaTiedot" prefHeight="106.0" prefWidth="554.0" text="Muuta" />
-            <Button layoutX="428.0" layoutY="468.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="126.0" prefWidth="554.0" text="Tyhjennä" />
-            <Text fx:id="poistamsg" layoutX="14.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.4700927734375" />
-            <Text fx:id="lisaamsg" layoutX="10.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.33333333333331" />
-            <Text fx:id="errormsg" layoutX="10.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.33333333333331" />
-            <Text fx:id="muutamsg" layoutX="10.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.33333333333331" />
->>>>>>> 689f7d932ed3905151f0f0cf8448e0cbb5982b05
          </children>
       </AnchorPane>
    </children>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aloitus.AloitusController">
+   <top>
+            <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="46.0" prefWidth="564.0" text="Vuokratoimistot OY Varausjärjestelmä 1.0" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Yu Gothic Light" size="26.0" />
+                </font>
+            </Label>
+   </top>
+   <bottom>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="350.0" layoutY="46.0" mnemonicParsing="false" onAction="#naytaVaraus" prefHeight="60.0" prefWidth="300.0" text="Tee varaus" textAlignment="JUSTIFY">
+                      <font>
+                          <Font size="13.0" />
+                      </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="350.0" layoutY="142.0" mnemonicParsing="false" onAction="#naytaAsiakas" prefHeight="60.0" prefWidth="300.0" text="Asiakastietojen hallinta">
+                      <font>
+                          <Font size="13.0" />
+                      </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="350.0" layoutY="246.0" mnemonicParsing="false" onAction="#naytaToimipiste" prefHeight="60.0" prefWidth="300.0" text="Toimipisteiden hallinta">
+                      <font>
+                          <Font size="14.0" />
+                      </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="351.0" layoutY="358.0" mnemonicParsing="false" onAction="#naytaPalvelut" prefHeight="60.0" prefWidth="298.0" text="Palveluiden ja laitteiden hallinta">
+                      <font>
+                          <Font size="14.0" />
+                      </font>
+                  </Button>
+            <Button layoutX="351.0" layoutY="462.0" mnemonicParsing="false" onAction="#naytaLasku" prefHeight="61.0" prefWidth="298.0" text="Laskujen hallinta">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+        </AnchorPane>
+   </bottom>
+</BorderPane>

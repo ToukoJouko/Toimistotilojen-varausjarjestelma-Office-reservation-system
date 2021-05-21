@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="varaushallinta.varaushallintaController">
+   <children>
+      <Button layoutX="752.0" layoutY="32.0" mnemonicParsing="false" onAction="#haetiedot" prefHeight="25.0" prefWidth="250.0" text="Hae" AnchorPane.bottomAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="750.0" layoutY="200.0" mnemonicParsing="false" onAction="#muutatiedot" prefHeight="200.0" prefWidth="250.0" text="Muuta">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="750.0" layoutY="400.0" mnemonicParsing="false" onAction="#poistavaraus" prefHeight="200.0" prefWidth="250.0" text="Poista">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="38.0" layoutY="32.0" prefHeight="17.0" prefWidth="103.0" text="VarausID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="76.0" text="Aloitus pvm">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="121.0" text="Lopetus pvm">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="165.0" text="AsiakasID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="206.0" text="ToimipisteID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="varausid" layoutX="102.0" layoutY="30.0" />
+      <TextField fx:id="aloituspvm" layoutX="121.0" layoutY="74.0" />
+      <TextField fx:id="lopetuspvm" layoutX="129.0" layoutY="119.0" />
+      <TextField fx:id="asiakasid" layoutX="121.0" layoutY="163.0" />
+      <TextField fx:id="toimipisteid" layoutX="121.0" layoutY="204.0" />
+      <Label layoutX="18.0" layoutY="335.0" prefHeight="17.0" prefWidth="87.0" text="Henkilömäärä:" />
+      <Label fx:id="henkilökapasiteetti" layoutX="98.0" layoutY="335.0" prefHeight="17.0" prefWidth="87.0" />
+      <Label layoutX="18.0" layoutY="319.0" prefHeight="17.0" prefWidth="75.0" text="Postinumero:" />
+      <Label fx:id="postinro" layoutX="92.0" layoutY="321.0" prefHeight="17.0" prefWidth="75.0" />
+      <Label layoutX="18.0" layoutY="353.0" prefHeight="17.0" prefWidth="33.0" text="Koko:" />
+      <Label fx:id="koko" layoutX="51.0" layoutY="353.0" prefHeight="17.0" prefWidth="59.0" />
+      <Label layoutX="18.0" layoutY="371.0" text="Huoneiden lkm:" />
+      <Label fx:id="huoneiden_lkm" layoutX="104.0" layoutY="371.0" prefHeight="17.0" prefWidth="50.0" />
+      <Label layoutX="19.0" layoutY="387.0" text="Vuokra:" />
+      <Label fx:id="vuokra" layoutX="62.0" layoutY="387.0" prefHeight="17.0" prefWidth="59.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="153.0" layoutX="10.0" layoutY="273.0" stroke="BLACK" strokeType="INSIDE" width="262.0" />
+      <Label layoutX="17.0" layoutY="275.0" prefHeight="27.0" prefWidth="163.0" text="Toimipisteen tiedot:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="303.0" prefHeight="17.0" prefWidth="75.0" text="Katuosoite:" />
+      <Label fx:id="katuosoite" layoutX="84.0" layoutY="303.0" prefHeight="17.0" prefWidth="156.0" />
+      <Label layoutX="15.0" layoutY="404.0" text="Palvelut:" />
+      <Label fx:id="lbpalvelut" layoutX="67.0" layoutY="404.0" prefHeight="17.0" prefWidth="156.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="153.0" layoutX="352.0" layoutY="273.0" stroke="BLACK" strokeType="INSIDE" width="262.0" />
+      <Label layoutX="357.0" layoutY="278.0" prefHeight="27.0" prefWidth="163.0" text="Asiakkaan tiedot:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="357.0" layoutY="314.0" text="Etunimi:" />
+      <Label layoutX="357.0" layoutY="329.0" text="Sukunimi:" />
+      <Label layoutX="357.0" layoutY="344.0" text="Sähköpostiosoite:" />
+      <Label layoutX="357.0" layoutY="359.0" text="Puhelinnumero:" />
+      <Label layoutX="357.0" layoutY="374.0" text="Katuosoite:" />
+      <Label layoutX="357.0" layoutY="389.0" text="Postinro:" />
+      <Label layoutX="357.0" layoutY="404.0" text="Toimipaikka:" />
+      <Label fx:id="asiakas_etunimi" layoutX="402.0" layoutY="314.0" prefHeight="17.0" prefWidth="75.0" />
+      <Label fx:id="asiakas_sukunimi" layoutX="410.0" layoutY="329.0" prefHeight="17.0" prefWidth="163.0" />
+      <Label fx:id="asiakas_email" layoutX="454.0" layoutY="344.0" prefHeight="17.0" prefWidth="156.0" />
+      <Label fx:id="asiakas_puhelinnumero" layoutX="446.0" layoutY="359.0" prefHeight="17.0" prefWidth="163.0" />
+      <Label fx:id="asiakas_katuosoite" layoutX="417.0" layoutY="374.0" prefHeight="17.0" prefWidth="191.0" />
+      <Label fx:id="asiakas_postinro" layoutX="406.0" layoutY="389.0" prefHeight="17.0" prefWidth="199.0" />
+      <Label fx:id="asiakas_toimipaikka" layoutX="426.0" layoutY="404.0" prefHeight="17.0" prefWidth="184.0" />
+      <Button layoutX="494.0" mnemonicParsing="false" onAction="#tyhjennaTiedot" prefHeight="200.0" prefWidth="250.0" text="Tyhjennä" />
+   </children>
+</AnchorPane>

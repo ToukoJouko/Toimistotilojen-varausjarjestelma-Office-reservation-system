@@ -6,6 +6,38 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch VaraushallintaMain",
+            "request": "launch",
+            "vmArgs": "--module-path E:/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.media",
+            "mainClass": "varaushallinta.VaraushallintaMain",
+            "projectName": "R12_ebe112f4"
+        },
+        {
+            "type": "java",
+            "name": "Launch TeeVarausMain",
+            "request": "launch",
+            "vmArgs": "--module-path E:/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.media",
+            "mainClass": "TeeVaraus.TeeVarausMain",
+            "projectName": "R12_ebe112f4"
+        },
+        {
+            "type": "java",
+            "name": "Launch AloitusGUI",
+            "request": "launch",
+            "vmArgs": "--module-path E:/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.media",
+            "mainClass": "aloitus.AloitusGUI",
+            "projectName": "R12_ebe112f4"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "vmArgs": "--module-path E:/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.media",
+            "mainClass": "aloitus.Main",
+            "projectName": "R12_ebe112f4"
+        },
+        {
+            "type": "java",
             "name": "Launch ToimipisteMain",
             "request": "launch",
             "vmArgs": "--module-path E:/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.media",
