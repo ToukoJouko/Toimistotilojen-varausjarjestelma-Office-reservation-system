@@ -111,9 +111,9 @@ public class ToimipisteController {
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             tulosjoukko = lause.executeQuery();
             if(tulosjoukko.next()== true){
-                //errormsg.setText("Toimipiste on jo olemassa");
+                errormsg.setText("Toimipiste on jo olemassa");
             }//else{
-                //errormsg.setText("");
+                errormsg.setText("");
             //}
         } catch (SQLException se){
             throw se;
@@ -140,10 +140,10 @@ public class ToimipisteController {
             int lkm = lause.executeUpdate();
 
             if (lkm == 0){
-                //errormsg.setText("Toimipisteen lisäys ei onnistunut");
+                errormsg.setText("Toimipisteen lisäys ei onnistunut");
             }
-            //lisaamsg.setText("Toimipiste lisätty");
-            //errormsg.setText("");
+            lisaamsg.setText("Toimipiste lisätty");
+            errormsg.setText("");
 
         } catch (SQLException se){
             throw se;
@@ -163,7 +163,7 @@ public class ToimipisteController {
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             lause.executeQuery();
-            //poistamsg.setText("Toimipiste poistettu");
+            poistamsg.setText("Toimipiste poistettu");
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -188,7 +188,7 @@ public class ToimipisteController {
             lause.setString(7, Vuokra.getText());
             lause.setString(8, ToimipisteID.getText());
             lause.executeUpdate();
-            //muutamsg.setText("Tiedot muutettu");
+            muutamsg.setText("Tiedot muutettu");
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -206,10 +206,10 @@ public class ToimipisteController {
         Huoneiden_lkm.setText("");
         Henkilomaara.setText("");
         Vuokra.setText("");
-        //lisaamsg.setText("");
-        //poistamsg.setText("");
-        //errormsg.setText("");
-        //muutamsg.setText("");
+        lisaamsg.setText("");
+        poistamsg.setText("");
+        errormsg.setText("");
+        muutamsg.setText("");
 
     }
 
