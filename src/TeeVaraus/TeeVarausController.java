@@ -103,7 +103,7 @@ public class TeeVarausController implements Initializable {
 
         String url = "jdbc:mysql://localhost:3306/ohtu1_proj";
         String user = "root";
-        String pwd = "Stpm2499";
+        String pwd = "-";
         String sql = "SELECT ToimipisteID, Toimipaikka FROM toimipiste;";
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
@@ -135,7 +135,7 @@ public class TeeVarausController implements Initializable {
 
         String url = "jdbc:mysql://localhost:3306/ohtu1_proj";
         String user = "root";
-        String pwd = "Stpm2499";
+        String pwd = "-";
         String sql = "SELECT AsiakasID FROM asiakas;";
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
@@ -166,7 +166,7 @@ public class TeeVarausController implements Initializable {
 
         String url = "jdbc:mysql://localhost:3306/ohtu1_proj";
         String user = "root";
-        String pwd = "Stpm2499";
+        String pwd = "-";
         String sql = "SELECT Etunimi, Sukunimi, Email, Puhelinnumero, Katuosoite, Postinro, Toimipaikka FROM asiakas WHERE AsiakasID = ?;";
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
@@ -210,7 +210,7 @@ public class TeeVarausController implements Initializable {
 
         String url = "jdbc:mysql://localhost:3306/ohtu1_proj";
         String user = "root";
-        String pwd = "Stpm2499";
+        String pwd = "-";
         String sql = "SELECT Katuosoite, Postinro, Henkilomaara, Koko_m2, Huoneiden_lkm, Vuokra FROM toimipiste WHERE ToimipisteID = ?;";
         String sql_palvelut= "SELECT PalveluID, Nimi FROM palvelut;";
         ResultSet tulosjoukko = null;
@@ -289,7 +289,7 @@ public class TeeVarausController implements Initializable {
 
         String url = "jdbc:mysql://localhost:3306/ohtu1_proj";
         String user = "root";
-        String pwd = "Stpm2499";
+        String pwd = "-";
         String sql = "SELECT Alkupvm, Loppupvm FROM toimitilavaraukset WHERE ToimipisteID = ?;";
 
         ResultSet tulosjoukko = null;
@@ -363,7 +363,7 @@ public class TeeVarausController implements Initializable {
 
         String url = "jdbc:mysql://localhost:3306/ohtu1_proj";
         String user = "root";
-        String pwd = "Stpm2499";
+        String pwd = "-";
         String sql = "INSERT INTO toimitilavaraukset (Alkupvm, Loppupvm, AsiakasID, ToimipisteID)" + " " + "VALUES (?, ?, ?, ?);";
         //String palvelu_sql = "INSERT INTO varauksen_palvelu (VarausID, PalveluID) VALUES(?,?);";
         PreparedStatement lause = null;
@@ -398,7 +398,7 @@ public class TeeVarausController implements Initializable {
 
         String url = "jdbc:mysql://localhost:3306/ohtu1_proj";
         String user = "root";
-        String pwd = "Stpm2499";
+        String pwd = "-";
 
         String[] toimipiste_id_ja_kaupunki = toimipiste_id.getValue().split(". ");
         String toimipisteID = toimipiste_id_ja_kaupunki[0];

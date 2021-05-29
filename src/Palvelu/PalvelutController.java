@@ -86,7 +86,7 @@ public class PalvelutController {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(palveluID.getText()));
             tulosjoukko = lause.executeQuery();
@@ -101,7 +101,7 @@ public class PalvelutController {
         sql = "INSERT INTO palvelut(PalveluID, Tyyppi, Nimi, Hinta) VALUES(?,?,?,?);";
         lause = null;
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1,Integer.parseInt(palveluID.getText()));
             lause.setString(2,tyyppi.getText());
@@ -126,7 +126,7 @@ public class PalvelutController {
         String sql = "UPDATE palvelut SET Tyyppi = ?, Nimi = ?, Hinta = ? WHERE PalveluID = ?";
         PreparedStatement paivitys = null;
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             paivitys = mycon.prepareStatement(sql);
             paivitys.setString(1,tyyppi.getText());
             paivitys.setString(2,nimi.getText());
@@ -146,7 +146,7 @@ public class PalvelutController {
         String sql = "DELETE FROM palvelut WHERE PalveluID = ?";
         PreparedStatement poisto = null;
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             poisto = mycon.prepareStatement(sql);
             poisto.setInt(1,Integer.parseInt(palveluID.getText()));
             poisto.executeUpdate();
@@ -167,7 +167,7 @@ public class PalvelutController {
         PreparedStatement lause = null;
 
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(palveluID.getText())); //asettaa sql lauseen ? paikalle annetun palveluID:n
             tulosjoukko = lause.executeQuery();

@@ -61,7 +61,7 @@ public class ToimipisteController {
             ResultSet tulosjoukko = null;
             PreparedStatement lause = null;
             try {
-                Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+                Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
                 lause = mycon.prepareStatement(sql);
                 lause.setInt(1, Integer.parseInt(ToimipisteID.getText())); //asettaa sql lauseen ? paikalle annetun ToimipisteID:n
                 tulosjoukko = lause.executeQuery();
@@ -106,7 +106,7 @@ public class ToimipisteController {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             tulosjoukko = lause.executeQuery();
@@ -126,7 +126,7 @@ public class ToimipisteController {
         lause = null;
         //asetetaan annetut tiedot muuttujien arvoiksi
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj","root","Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj","root","-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             lause.setString(2, Katuosoite.getText());
@@ -159,7 +159,7 @@ public class ToimipisteController {
                 +" "+"WHERE ToimipisteID = ?";
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(ToimipisteID.getText()));
             lause.executeQuery();
@@ -177,7 +177,7 @@ public class ToimipisteController {
                 + " " + "WHERE ToimipisteID = ?";
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setString(1, Katuosoite.getText());
             lause.setString(2, Postinro.getText());

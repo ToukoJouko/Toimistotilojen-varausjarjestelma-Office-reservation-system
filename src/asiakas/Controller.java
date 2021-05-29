@@ -70,7 +70,7 @@ public class Controller {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText())); //asettaa sql lauseen ? paikalle annetun laskuID:n
             tulosjoukko = lause.executeQuery();
@@ -111,7 +111,7 @@ public class Controller {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
             tulosjoukko = lause.executeQuery();
@@ -131,7 +131,7 @@ public class Controller {
         lause = null;
         //asetetaan annetut tiedot muuttujien arvoiksi
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
             lause.setString(2, sukunimi.getText());
@@ -166,7 +166,7 @@ public class Controller {
                 + " " + "WHERE AsiakasID = ?";
         PreparedStatement lause = null;
         try {
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(asiakasid.getText()));
             lause.executeUpdate();
@@ -200,7 +200,7 @@ public class Controller {
         + " " + "WHERE AsiakasID = ?";
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setString(1, sukunimi.getText());
             lause.setString(2, etunimi.getText());

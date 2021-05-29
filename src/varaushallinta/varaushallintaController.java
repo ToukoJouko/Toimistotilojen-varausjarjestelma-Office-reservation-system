@@ -88,7 +88,7 @@ public class varaushallintaController {
         ResultSet tulosjoukko = null;
 
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause=mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(varausid.getText()));
             tulosjoukko = lause.executeQuery();
@@ -138,7 +138,7 @@ public class varaushallintaController {
         PreparedStatement lause = null;
 
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setDate(1, Date.valueOf(aloituspvm.getText()));
             lause.setDate(2, Date.valueOf(lopetuspvm.getText()));
@@ -165,7 +165,7 @@ public class varaushallintaController {
         PreparedStatement tv_lause = null;
 
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             vp_lause = mycon.prepareStatement(sql_vp);
             tv_lause = mycon.prepareStatement(sql_tv);
             vp_lause.setInt(1, Integer.parseInt(varausid.getText()));

@@ -88,7 +88,7 @@ public class LaskuController {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try {
-           Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+           Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
            lause = mycon.prepareStatement(sql);
            lause.setInt(1, Integer.parseInt(laskuid.getText())); //asettaa sql lauseen ? paikalle annetun laskuID:n
            tulosjoukko = lause.executeQuery();
@@ -198,7 +198,7 @@ public class LaskuController {
         ResultSet tulosjoukko = null;
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(laskuid.getText()));
             tulosjoukko = lause.executeQuery();
@@ -218,7 +218,7 @@ public class LaskuController {
             lause = null;
             //asetetaan annetut tiedot muuttujien arvoiksi
             try{
-                Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj","root","Stpm2499");
+                Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj","root","-");
                 lause = mycon.prepareStatement(sql);
                 lause.setInt(1, Integer.parseInt(laskuid.getText()));
                 lause.setDouble(2,Double.parseDouble(summa.getText()));
@@ -247,7 +247,7 @@ public class LaskuController {
         +" "+"WHERE LaskuID = ?";
         PreparedStatement lause = null;
         try{
-            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "Stpm2499");
+            Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ohtu1_proj", "root", "-");
             lause = mycon.prepareStatement(sql);
             lause.setInt(1, Integer.parseInt(laskuid.getText()));
             lause.executeQuery();
